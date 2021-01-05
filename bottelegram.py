@@ -1,3 +1,10 @@
+from flask import Flask, request
+import telegram
+from telebot.credentials import bot_token, bot_user_name,URL
+global bot
+global TOKEN
+TOKEN ='1380069836:AAHRT2uobJUW1ckEZn6ghU56JxCMhK2B5lg'
+bot = telegram.Bot(token=TOKEN)
 from telegram.ext import Updater, MessageHandler, Filters
 import os
 import time
@@ -20,6 +27,7 @@ def speak(text,bot,update):
    #os.remove(filename)
 
 def new_member(bot, update):
+    bot.set_webhook(url='https://floating-plateau-30111.herokuapp.com/'+TOKEN)
     user = update.message.from_user
 
     update.message.reply_text('اهلا اهلا {} {} '.format(user['first_name'], user['last_name']))
