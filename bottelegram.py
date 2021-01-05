@@ -1,33 +1,8 @@
-﻿
-# bot_token = "1380069836:AAHRT2uobJUW1ckEZn6ghU56JxCMhK2B5lg"
-# bot_user_name = "@Youtubebaron_bot"
-# URL = "https://baronboot.herokuapp.com/"
-# from flask import Flask, request
-# import telegram
-# global bot
-# global TOKEN
-# TOKEN ='1380069836:AAHRT2uobJUW1ckEZn6ghU56JxCMhK2B5lg'
-# bot = telegram.Bot(token=TOKEN)
-from telegram.ext import Updater, MessageHandler, Filters
-import os
-import time
-import playsound
-import speech_recognition as sr
-from gtts import gTTS
-import datetime
+﻿from telegram.ext import Updater, MessageHandler, Filters
 updater = Updater(token="1380069836:AAHRT2uobJUW1ckEZn6ghU56JxCMhK2B5lg")
 dispatcher = updater.dispatcher
 global v
-# bot.set_webhook(url='https://floating-plateau-30111.herokuapp.com/'+TOKEN)
-def speak(text,bot,update):
-    date_string = datetime.datetime.now().strftime("%d%m%Y%H%M%S")
-    print("wite...")
-    tts=gTTS(text=text, lang="ar")
-    filename= 'v'+date_string+'.mp3'
-    tts.save(filename)
-    print("^_^")
-    bot.send_audio(chat_id=update.message.chat_id, audio=open(filename, 'rb'))
-   #os.remove(filename)
+
 
 def new_member(bot, update):
 
@@ -40,8 +15,7 @@ def start(bot, update):
     user = update.message.from_user
     if update.message.text == 'مرحبا':
         v='اهلا وسهلا جميلتنا نورتينا {} اذكري رمز الدخول الي موجود في الرسالة الي دخلتي من خلالها'.format(user['first_name'])
-       # v = 'اهلا اهلا {} {} '.format(user['first_name'], user['last_name'])
-        speak(v,bot, update)
+        v = 'اهلا اهلا {} {} '.format(user['first_name'], user['last_name'])
 
     elif update.message.text == 'اخرس':
         v = 'اهـــا أوكيه'
