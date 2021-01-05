@@ -1,10 +1,13 @@
-﻿from flask import Flask, request
-import telegram
-from telebot.credentials import bot_token, bot_user_name,URL
-global bot
-global TOKEN
-TOKEN ='1380069836:AAHRT2uobJUW1ckEZn6ghU56JxCMhK2B5lg'
-bot = telegram.Bot(token=TOKEN)
+﻿
+# bot_token = "1380069836:AAHRT2uobJUW1ckEZn6ghU56JxCMhK2B5lg"
+# bot_user_name = "@Youtubebaron_bot"
+# URL = "https://baronboot.herokuapp.com/"
+# from flask import Flask, request
+# import telegram
+# global bot
+# global TOKEN
+# TOKEN ='1380069836:AAHRT2uobJUW1ckEZn6ghU56JxCMhK2B5lg'
+# bot = telegram.Bot(token=TOKEN)
 from telegram.ext import Updater, MessageHandler, Filters
 import os
 import time
@@ -15,7 +18,7 @@ import datetime
 updater = Updater(token="1380069836:AAHRT2uobJUW1ckEZn6ghU56JxCMhK2B5lg")
 dispatcher = updater.dispatcher
 global v
-bot.set_webhook(url='https://floating-plateau-30111.herokuapp.com/'+TOKEN)
+# bot.set_webhook(url='https://floating-plateau-30111.herokuapp.com/'+TOKEN)
 def speak(text,bot,update):
     date_string = datetime.datetime.now().strftime("%d%m%Y%H%M%S")
     print("wite...")
@@ -50,7 +53,6 @@ def start(bot, update):
         v = ' مب بوت ياحمار'
     bot.send_message(chat_id=update.message.chat_id,
                      text=v, )
-
 
 updater.dispatcher.add_handler(MessageHandler(Filters.status_update.new_chat_members, new_member))
 start_handler = MessageHandler(Filters.text, start)
