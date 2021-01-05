@@ -1,4 +1,4 @@
-from flask import Flask, request
+﻿from flask import Flask, request
 import telegram
 from telebot.credentials import bot_token, bot_user_name,URL
 global bot
@@ -15,7 +15,7 @@ import datetime
 updater = Updater(token="1380069836:AAHRT2uobJUW1ckEZn6ghU56JxCMhK2B5lg")
 dispatcher = updater.dispatcher
 global v
-
+bot.set_webhook(url='https://floating-plateau-30111.herokuapp.com/'+TOKEN)
 def speak(text,bot,update):
     date_string = datetime.datetime.now().strftime("%d%m%Y%H%M%S")
     print("wite...")
@@ -27,7 +27,7 @@ def speak(text,bot,update):
    #os.remove(filename)
 
 def new_member(bot, update):
-    bot.set_webhook(url='https://floating-plateau-30111.herokuapp.com/'+TOKEN)
+
     user = update.message.from_user
 
     update.message.reply_text('اهلا اهلا {} {} '.format(user['first_name'], user['last_name']))
