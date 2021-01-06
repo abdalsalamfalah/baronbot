@@ -51,7 +51,6 @@ def start(bot, update):
         v = ' مب بوت ياحمار'
     bot.send_message(chat_id=update.message.chat_id,
                      text=v, )
-
 updater.dispatcher.add_handler(MessageHandler(Filters.status_update.new_chat_members, new_member))
 start_handler = MessageHandler(Filters.text, start)
 dispatcher.add_handler(start_handler)
