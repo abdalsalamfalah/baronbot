@@ -6,11 +6,10 @@ global v
 
 def new_user(update, context):
     user = update.message.from_user
-<<<<<<< HEAD
+
     update.message.reply_text(' اهلا وسهلا نورت/ي قروبنا حياك الله ️ {} {} '.format(user['first_name'], user['last_name']))
-=======
+
     update.message.reply_text(' اهلا وسهلا نورت/ي قروبنا حياك الله{} {} '.format(user['first_name'], user['last_name']))
->>>>>>> d9332892cb1eb75cb1a95a477c79faed960f914b
 def start(bot, update):
     user = update.message.from_user
     if update.message.text == 'مرحبا':
