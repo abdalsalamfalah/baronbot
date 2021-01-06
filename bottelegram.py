@@ -1,23 +1,11 @@
-﻿from telegram.ext import Updater, MessageHandler, Filters
+﻿import unicodedata
+from telegram.ext import Updater, MessageHandler, Filters
 import os
 import time
-import playsound
-import speech_recognition as sr
-from gtts import gTTS
 import datetime
 updater = Updater(token="1380069836:AAFveYvNkEq9mOxovgO9BO8enUN2u9s5XO4")
 dispatcher = updater.dispatcher
 global v
-
-def speak(text,bot,update):
-    date_string = datetime.datetime.now().strftime("%d%m%Y%H%M%S")
-    print("wite...")
-    tts=gTTS(text=text, lang="ar")
-    filename= 'v'+date_string+'.mp3'
-    tts.save(filename)
-    print("^_^")
-    bot.send_audio(chat_id=update.message.chat_id, audio=open(filename, 'rb'))
-   #os.remove(filename)
 
 def new_member(bot, update):
     user = update.message.from_user
@@ -29,7 +17,7 @@ def start(bot, update):
     if update.message.text == 'مرحبا':
         v='اهلا وسهلا جميلتنا {} اذكري رمز الدخول ال لي موجود في الرسالة التي دخلتِي من خلالها'.format(user['first_name'])
        # v = 'اهلا اهلا {} {} '.format(user['first_name'], user['last_name'])
-        speak(v,bot, update)
+
     elif update.message.text == 'اخرس':
         v = 'اهـــا أوكيه'
     elif update.message.text == 'احبك':
