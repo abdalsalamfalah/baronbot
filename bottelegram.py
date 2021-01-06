@@ -1,14 +1,4 @@
-﻿# bot_token = "1380069836:AAHRT2uobJUW1ckEZn6ghU56JxCMhK2B5lg"
-# bot_user_name = "@Youtubebaron_bot"
-# URL = "https://baronboot.herokuapp.com/"
-# from flask import Flask, request
-# import telegram
-# global bot
-# global TOKEN
-# TOKEN ='1380069836:AAHRT2uobJUW1ckEZn6ghU56JxCMhK2B5lg'
-# bot.set_webhook(url='https://floating-plateau-30111.herokuapp.com/'+TOKEN)
-# bot = telegram.Bot(token=TOKEN)
-from telegram.ext import Updater, MessageHandler, Filters
+﻿from telegram.ext import Updater, MessageHandler, Filters
 import os
 import time
 import playsound
