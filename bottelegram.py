@@ -1,11 +1,13 @@
-﻿from telegram.ext import Updater, MessageHandler, Filters
+﻿
+
+from telegram.ext import Updater, MessageHandler, Filters
 import os
 import time
 import playsound
 import speech_recognition as sr
 from gtts import gTTS
 import datetime
-updater = Updater(token="1380069836:AAHRT2uobJUW1ckEZn6ghU56JxCMhK2B5lg")
+updater = Updater(token="1380069836:AAFveYvNkEq9mOxovgO9BO8enUN2u9s5XO4")
 dispatcher = updater.dispatcher
 global v
 
@@ -21,6 +23,7 @@ def speak(text,bot,update):
 
 def new_member(bot, update):
     user = update.message.from_user
+
     update.message.reply_text('اهلا اهلا {} {} '.format(user['first_name'], user['last_name']))
 
 
@@ -41,14 +44,11 @@ def start(bot, update):
         v = ' مب بوت ياحمار'
     bot.send_message(chat_id=update.message.chat_id,
                      text=v, )
+
+
 updater.dispatcher.add_handler(MessageHandler(Filters.status_update.new_chat_members, new_member))
 start_handler = MessageHandler(Filters.text, start)
 dispatcher.add_handler(start_handler)
 updater.start_polling()
 updater.idle()
-
-
-
-
-
 
