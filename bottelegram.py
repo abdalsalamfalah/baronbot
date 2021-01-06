@@ -1,12 +1,13 @@
-﻿bot_token = "1380069836:AAHRT2uobJUW1ckEZn6ghU56JxCMhK2B5lg"
-bot_user_name = "@Youtubebaron_bot"
-URL = "https://baronboot.herokuapp.com/"
-from flask import Flask, request
-import telegram
-global bot
-global TOKEN
-TOKEN ='1380069836:AAHRT2uobJUW1ckEZn6ghU56JxCMhK2B5lg'
-bot = telegram.Bot(token=TOKEN)
+﻿# bot_token = "1380069836:AAHRT2uobJUW1ckEZn6ghU56JxCMhK2B5lg"
+# bot_user_name = "@Youtubebaron_bot"
+# URL = "https://baronboot.herokuapp.com/"
+# from flask import Flask, request
+# import telegram
+# global bot
+# global TOKEN
+# TOKEN ='1380069836:AAHRT2uobJUW1ckEZn6ghU56JxCMhK2B5lg'
+# bot.set_webhook(url='https://floating-plateau-30111.herokuapp.com/'+TOKEN)
+# bot = telegram.Bot(token=TOKEN)
 from telegram.ext import Updater, MessageHandler, Filters
 import os
 import time
@@ -17,7 +18,7 @@ import datetime
 updater = Updater(token="1380069836:AAHRT2uobJUW1ckEZn6ghU56JxCMhK2B5lg")
 dispatcher = updater.dispatcher
 global v
-bot.set_webhook(url='https://floating-plateau-30111.herokuapp.com/'+TOKEN)
+
 def speak(text,bot,update):
     date_string = datetime.datetime.now().strftime("%d%m%Y%H%M%S")
     print("wite...")
@@ -29,9 +30,7 @@ def speak(text,bot,update):
    #os.remove(filename)
 
 def new_member(bot, update):
-
     user = update.message.from_user
-
     update.message.reply_text('اهلا اهلا {} {} '.format(user['first_name'], user['last_name']))
 
 
