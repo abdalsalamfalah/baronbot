@@ -1,6 +1,6 @@
 ﻿import unicodedata
 from telegram.ext import Updater, MessageHandler, Filters
-updater = Updater(token="1380069836:AAFveYvNkEq9mOxovgO9BO8enUN2u9s5XO4")
+updater = Updater(token="1380069836:AAFVmcmtdpaCnLKGvlbq20gg_VXrZdvNQWM")
 dispatcher = updater.dispatcher
 global v
 
