@@ -9,13 +9,13 @@ global v
 
 def new_user(update, context):
     user = update.message.from_user
-    update.message.reply_text('اهلا اهلا {} {} '.format(user['first_name'], user['last_name']))
+    update.message.reply_text(' اهلا وسهلا نورت/ي قروبنا حياك الله 😍❤️ {} {} '.format(user['first_name'], user['last_name']))
 
 
 def start(bot, update):
     user = update.message.from_user
     if update.message.text == 'مرحبا':
-        v='اهلا وسهلا جميلتنا نورتينا {} اذكري رمز الدخول الي موجود في الرسالة الي دخلتي من خلالها'.format(user['first_name'])
+        v='ياهـــــلا والله'.format(user['first_name'])
        # v = 'اهلا اهلا {} {} '.format(user['first_name'], user['last_name'])
 
 
