@@ -6,7 +6,6 @@ global v
 
 def new_user(update, context):
     user = update.message.from_user
-
     update.message.reply_text(' اهلا وسهلا نورت/ي قروبنا حياك الله ️ {} {} '.format(user['first_name'], user['last_name']))
 
     update.message.reply_text(' اهلا وسهلا نورت/ي قروبنا حياك الله{} {} '.format(user['first_name'], user['last_name']))
