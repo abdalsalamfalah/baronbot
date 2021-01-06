@@ -1,6 +1,4 @@
-﻿
-
-from telegram.ext import Updater, MessageHandler, Filters
+﻿from telegram.ext import Updater, MessageHandler, Filters
 import os
 import time
 import playsound
@@ -23,7 +21,6 @@ def speak(text,bot,update):
 
 def new_member(bot, update):
     user = update.message.from_user
-
     update.message.reply_text('اهلا اهلا {} {} '.format(user['first_name'], user['last_name']))
 
 
@@ -33,7 +30,6 @@ def start(bot, update):
         v='اهلا وسهلا جميلتنا {} اذكري رمز الدخول ال لي موجود في الرسالة التي دخلتِي من خلالها'.format(user['first_name'])
        # v = 'اهلا اهلا {} {} '.format(user['first_name'], user['last_name'])
         speak(v,bot, update)
-
     elif update.message.text == 'اخرس':
         v = 'اهـــا أوكيه'
     elif update.message.text == 'احبك':
@@ -42,8 +38,7 @@ def start(bot, update):
         v = 'اصبر وين بأجيك'
     elif update.message.text == 'بوت':
         v = ' مب بوت ياحمار'
-    bot.send_message(chat_id=update.message.chat_id,
-                     text=v, )
+    bot.send_message(chat_id=update.message.chat_id,text=v, )
 
 
 updater.dispatcher.add_handler(MessageHandler(Filters.status_update.new_chat_members, new_member))
