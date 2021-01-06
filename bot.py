@@ -1,15 +1,12 @@
 ﻿import unicodedata
 from telegram.ext import Updater, MessageHandler, Filters
-import os
-import time
-import datetime
 updater = Updater(token="1380069836:AAFveYvNkEq9mOxovgO9BO8enUN2u9s5XO4")
 dispatcher = updater.dispatcher
 global v
 
 def new_user(update, context):
     user = update.message.from_user
-    update.message.reply_text(' اهلا وسهلا نورت/ي قروبنا حياك الله 😍❤️ {} {} '.format(user['first_name'], user['last_name']))
+    update.message.reply_text(' اهلا وسهلا نورت/ي قروبنا حياك الله ️ {} {} '.format(user['first_name'], user['last_name']))
 def start(bot, update):
     user = update.message.from_user
     if update.message.text == 'مرحبا':
