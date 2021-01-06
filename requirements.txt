@@ -1,3 +1,4 @@
+python-telegram-bot==11.0.0
 telegram==0.0.1
 playsound==1.2.2
 speechrecognition==3.8.1
