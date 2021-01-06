@@ -14,7 +14,7 @@ import playsound
 import speech_recognition as sr
 from gtts import gTTS
 import datetime
-updater = Updater(token="")
+updater = Updater(token="1380069836:AAHRT2uobJUW1ckEZn6ghU56JxCMhK2B5lg")
 dispatcher = updater.dispatcher
 global v
 bot.set_webhook(url='https://floating-plateau-30111.herokuapp.com/'+TOKEN)
