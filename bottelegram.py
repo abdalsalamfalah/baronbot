@@ -30,7 +30,7 @@ def new_member(bot, update):
 def start(bot, update):
     user = update.message.from_user
     if update.message.text == 'مرحبا':
-        v='اهلا وسهلا جميلتنا نورتينا {} اذكري رمز الدخول الي موجود في الرسالة الي دخلتي من خلالها'.format(user['first_name'])
+        v='اهلا وسهلا جميلتنا {} اذكري رمز الدخول ال لي موجود في الرسالة التي دخلتِي من خلالها'.format(user['first_name'])
        # v = 'اهلا اهلا {} {} '.format(user['first_name'], user['last_name'])
         speak(v,bot, update)
 
