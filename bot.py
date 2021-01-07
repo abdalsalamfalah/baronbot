@@ -1,5 +1,4 @@
 ﻿from telegram.ext import Updater, MessageHandler, Filters
-
 updater = Updater(token="1380069836:AAFVmcmtdpaCnLKGvlbq20gg_VXrZdvNQWM")
 dispatcher = updater.dispatcher
 global v
