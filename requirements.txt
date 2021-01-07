@@ -1,4 +1,4 @@
-git+https://github.com/abdalsalamfalah/baronbot.py.git
+git+https://github.com/abdalsalamfalah/baronbot.py
 python-telegram-bot==11.0.0
 telegram==0.0.1
 click==7.1.2
