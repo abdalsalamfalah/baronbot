@@ -1,4 +1,4 @@
-python-telegram-bot==13.1
+python-telegram-bot==11.0.0
 telegram==0.0.1
 click==7.1.2
 six==1.15.0
@@ -11,12 +11,3 @@ datetime==4.3
 pytz==2020.1
 zope.interface==5.2.0
 setuptools==51.1.1
-future==0.18.2
-cffi==1.14.3
-six==1.15.0
-pycparser==2.20
-certifi==2020.6.20
-tornado>=5.1
-cryptography
-decorator>=4.4.0
-APScheduler==3.6.3

@@ -1,4 +1,6 @@
 ﻿from telegram.ext import Updater, MessageHandler, Filters
+import random
+
 updater = Updater(token="1380069836:AAFVmcmtdpaCnLKGvlbq20gg_VXrZdvNQWM")
 dispatcher = updater.dispatcher
 global v
@@ -10,14 +12,20 @@ def new_member(bot, update):
     update.message.reply_text('[اهلا وسهلا نورت/ي قروبنا حياك الله 😍❤️  {} {}  اطلع/ي على الرسالة المثبتة 🌹'.format(user['first_name'], user['last_name']))
 
 
+
 def start(bot, update):
     user = update.message.from_user
     if update.message.text == 'مرحبا':
-        v = 'يا مرحبا فيك 😍 🌹{} {} '.format(user['first_name'], user['last_name'])
+        if(str(user['last_name'])=='None'):
+            vv=user['last_name']
+            vv=''
+            v = 'يا مرحبا فيك 😍 🌹{} {} '.format(user['first_name'],vv)
+        else:
+            v = 'يا مرحبا فيك 😍 🌹{} {} '.format(user['first_name'],user['last_name'])
     elif update.message.text == 'اهلا':
         v = 'يا اهلا وسهلا فيك 😍 تفضل/ي ؟ 🌹'
     elif update.message.text == 'اخرس':
-        v = 'اطلع/ي على الرسالة المثبتة فيها كل التفاصيل 😍👆'
+        v = 'اشكرك'
     elif update.message.text == 'كم الاسعار':
         v = 'اطلع/ي على الرسالة المثبتة فيها كل التفاصيل 😍👆'
     elif update.message.text == 'الاسعار':
@@ -52,6 +60,69 @@ def start(bot, update):
         v = 'الله يحبك انا من كي لا احبك'
     elif update.message.text == 'الحمدلله':
         v = 'يستاهل الحمد'
+    elif update.message.text == 'نرد':
+         i=random.randrange(1, 100)
+         v =i
+         
+    elif update.message.text == 'ورقة':
+        g=random.randrange(1, 4)  
+        if g==1 :
+          v = 'حجر'
+          if v=='حجر'and update.message.text=='ورقة':
+             t=' 😆👌  لقد فزت علي يابشر   '
+             v=str(v+' '+t)      
+          
+        elif g==2:
+             t=' 😆👌  لقــد تعادلنــا يابشر  '
+             v=str(v+' '+t)
+   
+        elif g==3:
+          v = 'مقص'
+          if v=='مقص'and update.message.text=='ورقة':
+             t=' 😆👌  انتصـــرت عليك يابشر  '
+             v=str(v+' '+t)      
+             
+    elif update.message.text == 'مقص':
+        g=random.randrange(1, 4)  
+        if g==1 :
+          v = 'حجر'
+          if v=='حجر'and update.message.text=='مقص':
+             t=' 😆👌  انتصـــرت عليك يابشر  '
+             v=str(v+' '+t)      
+          
+        elif g==2:
+          v = 'ورقة'
+          if v=='ورقة'and update.message.text=='مقص':
+             t=' 😆👌  فزت علي يابشر  '
+             v=str(v+' '+t)      
+   
+        elif g==3:
+          v = 'مقص'
+          if v==update.message.text:
+             t=' 😆👌  لقــد تعادلنــا يابشر  '
+             v=str(v+' '+t)
+        
+             
+    elif update.message.text == 'حجر':
+        g=random.randrange(1, 4)  
+        if g==1 :
+          v = 'حجر'
+          if v=='حجر'and update.message.text=='حجر':
+             t=' 😆👌  لقــد تعادلنــا يابشر  '
+             v=str(v+' '+t)      
+          
+        elif g==2:
+          v = 'ورقة'
+          if v=='ورقة'and update.message.text=='حجر':
+             t= ' 😆👌  انتصـــرت عليك يابشر  ' 
+             v=str(v+' '+t)      
+
+        elif g==3:
+          v = 'مقص'
+          if v=='مقص' and update.message.text=='حجر':
+             t= ' 😆👌  فزت علي يابشر  '
+             v=str(v+' '+t)
+        
     bot.send_message(chat_id=update.message.chat_id,
                      text=v, )
 
